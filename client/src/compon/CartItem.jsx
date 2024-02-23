@@ -1,5 +1,5 @@
 import '../App.css';
-import {Text, Box, Flex, Grid, Input, Heading, Center, Card, Image} from '@chakra-ui/react';
+import {Text, Box, Flex, Grid, Input, Heading, Center, Card, Image, Button} from '@chakra-ui/react';
 import batat from '../img/batat.jpg'
 
 const CartItem = () =>{
@@ -15,7 +15,6 @@ const CartItem = () =>{
             ></Image>
     <Box
         width={'100%'}
-        textAlign={'center'}
     >
         <Heading fontSize={'30px'}>European sweet potato</Heading>
     </Box>
@@ -23,6 +22,17 @@ const CartItem = () =>{
         <Text>
             fuhgfjkg
         </Text>
+    </Box>
+    <Box display='flex'>
+        <Button  colorScheme='teal' variant='solid' margin='10px 10px 10px 50px' width='120px' boxShadow='lg' rounded='md'>
+            Купить
+        </Button>
+            {/* <Button  colorScheme='teal' variant='outline'margin='10px 50px 10px 10px' width='120px'>
+                Подробнее...
+            </Button> */}
+        <Box border='1px' borderColor='teal' borderRadius='5px' height='40px' width='120px' margin='10px 50px 10px 10px' >
+            <Text color='teal' textAlign='center' padding='8px'>Цена: 3647$</Text>
+        </Box>
     </Box>
         </Card>
     )

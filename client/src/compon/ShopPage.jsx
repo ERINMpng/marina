@@ -1,9 +1,12 @@
 import '../App.css';
 import CartItem from './CartItem';
 import { Flex  } from '@chakra-ui/react';
+import NavBar from './NavBar';
 
 const ShopPage = () =>{
     return(
+    <Flex justify='center' flexDirection='column'>
+        <NavBar />
         <Flex
         justify={'center'}
         align={'center'}
@@ -21,6 +24,7 @@ const ShopPage = () =>{
         <CartItem />
         <CartItem />
         <CartItem />
+    </Flex>
     </Flex>
     )
    
