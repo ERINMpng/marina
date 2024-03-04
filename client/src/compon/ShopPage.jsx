@@ -2,6 +2,8 @@ import '../App.css';
 import CartItem from './CartItem';
 import { Flex  } from '@chakra-ui/react';
 import NavBar from './NavBar';
+import FooterPage from './foter';
+import TopButton from './TopButton';
 
 const ShopPage = () =>{
     return(
@@ -25,6 +27,8 @@ const ShopPage = () =>{
         <CartItem />
         <CartItem />
     </Flex>
+    <TopButton />
+    <FooterPage />
     </Flex>
     )
    
