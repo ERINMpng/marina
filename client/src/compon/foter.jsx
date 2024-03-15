@@ -19,7 +19,7 @@ const FooterPage = () =>{
         margin='100px 0px 0px 0px'>
             <Box
             width='100%'
-            backgroundColor='rgb(47, 79, 79)'
+            backgroundColor='#171211'
             height='200px'
             display={'flex'}
             justify={'space-between'}>

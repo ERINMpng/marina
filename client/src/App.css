@@ -1,3 +1,6 @@
+body{
+    font-family: "Montserrat", sans-serif;
+}
 .topb {
     position: absolute;
     bottom: 50px;

@@ -5,13 +5,14 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import NavBar from './NavBar';
 import FooterPage from './foter';
 import TopButton from './TopButton';
+import Main from './main';
 
 const HomePage = () =>{
     return(
         <Box>
         <NavBar />
+        <Main />
         <Flex 
-            h={'100vh'} 
             width={"100%"} 
             justify={'center'}> 
             <TopButton />
