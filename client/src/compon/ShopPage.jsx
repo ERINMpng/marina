@@ -26,6 +26,8 @@ const ShopPage = () =>{
         <CartItem />
         <CartItem />
         <CartItem />
+        <CartItem />
+        <CartItem />
     </Flex>
     <TopButton />
     <FooterPage />

@@ -15,8 +15,8 @@ const HomePage = () =>{
         <Flex 
             width={"100%"} 
             justify={'center'}> 
-            <TopButton />
             <FooterPage />
+            <TopButton />
         </Flex>
         </Box>
     )

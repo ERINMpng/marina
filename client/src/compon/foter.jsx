@@ -15,8 +15,7 @@ const FooterPage = () =>{
         justify={'space-between'}
         width={'100%'}
         borderRadius={'8px'}
-        height={'200px'}
-        margin='100px 0px 0px 0px'>
+        height={'200px'}>
             <Box
             width='100%'
             backgroundColor='#171211'
@@ -26,15 +25,7 @@ const FooterPage = () =>{
                 <Box>
                 <Link to={HomeRouter}>
                 <Heading color={'white'} margin='30px 0px 0px 50px' fontSize='50px'>Potashop</Heading></Link>
-                </Box>
-                <Box margin='60px 0px 0px 50px'>
-                    <lu>
-                        <li><Link to={HelpRouter}>Hyshna help?</Link></li>
-                        <li><Link to={HelpRouter}>Hyshna help?</Link></li>
-                        <li><Link to={HelpRouter}>Hyshna help?</Link></li>
-                        <li><Link to={HelpRouter}>Hyshna help?</Link></li>
-                        <li><Link to={HelpRouter}>Hyshna help?</Link></li>
-                    </lu>
+                <Text color={'#9e716c'} margin='10px 0px 0px 100px'><Link to={HelpRouter}>Hyshna help?</Link></Text>
                 </Box>
             </Box>
         </Flex>

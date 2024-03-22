@@ -24,14 +24,14 @@ const CartItem = () =>{
         </Text>
     </Box>
     <Box display='flex'>
-        <Button  colorScheme='teal' variant='solid' margin='10px 10px 10px 50px' width='120px' boxShadow='lg' rounded='md'>
+        <Button  colorScheme='green' variant='solid' margin='10px 10px 10px 50px' width='120px' boxShadow='lg' rounded='md'>
             Купить
         </Button>
             {/* <Button  colorScheme='teal' variant='outline'margin='10px 50px 10px 10px' width='120px'>
                 Подробнее...
             </Button> */}
-        <Box border='1px' borderColor='teal' borderRadius='5px' height='40px' width='120px' margin='10px 50px 10px 10px' >
-            <Text color='teal' textAlign='center' padding='8px'>Цена: 3647$</Text>
+        <Box border='1px' borderColor='green' borderRadius='5px' height='40px' width='120px' margin='10px 50px 10px 10px' >
+            <Text color='green' textAlign='center' padding='8px'>Цена: 3647$</Text>
         </Box>
     </Box>
         </Card>
