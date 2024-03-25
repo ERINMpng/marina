@@ -3,8 +3,29 @@ import {Text, Box, Flex, Grid, Input, Heading, Center} from '@chakra-ui/react';
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import {ShopRouter, HomeRouter, RegisterRouter, AuthRouter} from '../utils/const'
 import { Link } from 'react-router-dom';
+import { useRef, useEffect, useState } from 'react' 
 
 const NavBar = () => {
+
+    const prevScrollY = useRef(0); 
+    const [isNavBarVisible, setIsNavBarVisible] = useState(true); 
+      
+    useEffect(() => { 
+        const scroll = () =>{ 
+            const currentScrollY = window.scrollY; 
+            const scrollDirection = currentScrollY > prevScrollY.current ? "down" : "up"; 
+            if(scrollDirection === "down" && currentScrollY > 50){ 
+                setIsNavBarVisible(false) 
+            }else if(scrollDirection === "up" || currentScrollY <=50){ 
+                setIsNavBarVisible(true) 
+            } 
+            prevScrollY.current = currentScrollY; 
+        } 
+        window.addEventListener("scroll", scroll); 
+ 
+        return() => window.removeEventListener("scroll", scroll); 
+    }, []);
+
     return (
         <Flex
         align={'center'}
@@ -12,6 +33,12 @@ const NavBar = () => {
         width={'100%'}
         padding={'10px 50px'}
         backgroundColor='#040404'
+        position={'fixed'}
+        zIndex={'999'}
+        style={{
+            
+            opacity: isNavBarVisible ? 1 : 0
+        }}
         >
             <Flex>
                 <Link to={ShopRouter}>
