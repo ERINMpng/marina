@@ -7,7 +7,7 @@ body{
     right: 50px;
     cursor: pointer;
     z-index: 999;
-    background-color: rgba(196, 243, 213, 0.113);
+    background-color: rgb(242, 208, 192);
     border: none;
     border-radius: 50%;
     box-shadow: 1px 1px 10px rgba(31, 30, 28, 0.461);

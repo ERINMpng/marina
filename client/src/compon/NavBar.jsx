@@ -35,6 +35,7 @@ const NavBar = () => {
         backgroundColor='#040404'
         position={'fixed'}
         zIndex={'999'}
+        height={'90px'}
         style={{
             
             opacity: isNavBarVisible ? 1 : 0

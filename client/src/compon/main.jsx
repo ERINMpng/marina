@@ -156,7 +156,8 @@ const Main = () => {
                                 </FormControl>
                                 <Button colorScheme='whiteAlpha'  margin={'10px 30px 10px 30px'} width={'300px'} fontSize={'20px'}>SEND</Button>
                         </Flex>
-                        <Text fontSize={'100px'} color={'#fcf3f0'} margin={'50px 50px 50px 50px'}>WE WILL HELP YOU ORDER RIGHT NOW</Text>
+                        <Box width={'400px'}>
+                        <Text fontSize={'90px'} color={'#fcf3f0'} margin={'50px 50px 50px 50px'} >WE WILL HELP YOU</Text></Box>
                     </Flex>
         </Box>
     )}

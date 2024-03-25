@@ -1,14 +1,16 @@
 import '../App.css';
 import CartItem from './CartItem';
-import { Flex  } from '@chakra-ui/react';
+import { Flex, Box } from '@chakra-ui/react';
 import NavBar from './NavBar';
 import FooterPage from './foter';
 import TopButton from './TopButton';
+import CartItem2 from './Cart2';
 
 const ShopPage = () =>{
     return(
-    <Flex justify='center' flexDirection='column'>
-        <NavBar />
+        <Box>
+            <NavBar />
+    <Flex justify='center' flexDirection='column' padding={'50px 0px 0px 0px'}>
         <Flex
         justify={'center'}
         align={'center'}
@@ -27,11 +29,13 @@ const ShopPage = () =>{
         <CartItem />
         <CartItem />
         <CartItem />
-        <CartItem />
+        <CartItem2 />
     </Flex>
     <TopButton />
-    <FooterPage />
+    <Box margin={'25px 0px 0px 0px'}>
+    <FooterPage /></Box>
     </Flex>
+    </Box>
     )
    
 }
