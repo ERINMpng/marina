@@ -6,9 +6,26 @@ import NavBar from './NavBar';
 import FooterPage from './foter';
 import TopButton from './TopButton';
 import Main from './main';
+import { useEffect, useState } from 'react';
+import Loader from './Loader';
 
 const HomePage = () =>{
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            setIsLoading(false)
+        }
+        fetchData();
+    }, [])
+
     return(
+        <>
+            {isLoading ? (
+                <Loader />
+            ) : (
+        
         <Box>
         <NavBar />
         <Main />
@@ -18,7 +35,7 @@ const HomePage = () =>{
             <FooterPage />
             <TopButton />
         </Flex>
-        </Box>
+        </Box>)}</>
     )
 }
 

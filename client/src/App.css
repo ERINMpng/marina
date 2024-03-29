@@ -2,14 +2,13 @@ body{
     font-family: "Montserrat", sans-serif;
 }
 .topb {
-    position: absolute;
-    bottom: 50px;
+    position:absolute;
+    bottom: -25px;
     right: 50px;
     cursor: pointer;
     z-index: 999;
-    background-color: rgb(242, 208, 192);
+    background-color: rgb(84, 68, 60);
     border: none;
-    border-radius: 50%;
     box-shadow: 1px 1px 10px rgba(31, 30, 28, 0.461);
     opacity: 0.8;
     transition: all 0.3 ease-in-out;

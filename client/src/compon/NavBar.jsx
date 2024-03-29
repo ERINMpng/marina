@@ -4,12 +4,14 @@ import { Button, ButtonGroup } from '@chakra-ui/react'
 import {ShopRouter, HomeRouter, RegisterRouter, AuthRouter} from '../utils/const'
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react' 
+import { useLocation } from 'react-router-dom';
 
 const NavBar = () => {
 
     const prevScrollY = useRef(0); 
     const [isNavBarVisible, setIsNavBarVisible] = useState(true); 
-      
+    const location = useLocation();
+    
     useEffect(() => { 
         const scroll = () =>{ 
             const currentScrollY = window.scrollY; 
@@ -25,6 +27,20 @@ const NavBar = () => {
  
         return() => window.removeEventListener("scroll", scroll); 
     }, []);
+
+
+    useEffect(() => {
+        const scrollToSection = window.location.hash.substring(1)
+
+        if(scrollToSection){
+            const section = document.getElementById(scrollToSection)
+            if(section){
+                section.scrollIntoView({
+                    behavior:"smooth"
+                })
+            }
+        }
+    }, [window.location.hash])
 
     return (
         <Flex
@@ -43,12 +59,13 @@ const NavBar = () => {
         >
             <Flex>
                 <Link to={ShopRouter}>
-                <Button colorScheme='blackAlpha'>Shop</Button>
-                </Link>
-                <Button colorScheme='blackAlpha'>About</Button>
-                <Button colorScheme='blackAlpha'>Product</Button>
+                <Button colorScheme='blackAlpha'>Shop</Button></Link>
+                <Link to={`${HomeRouter}#services`}>
+                <Button colorScheme='blackAlpha'>About</Button></Link>
+                <Link to={`${HomeRouter}#product`}>
+                <Button colorScheme='blackAlpha'>Product</Button></Link>
             </Flex>
-            <Link to={HomeRouter}>
+            <Link to={`${HomeRouter}#main`}>
             <Heading color='white'>Potashop</Heading></Link>
             <Flex
                 justify={'space-between'}

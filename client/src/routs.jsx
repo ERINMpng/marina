@@ -1,9 +1,10 @@
-import { ShopRouter, HomeRouter, RegisterRouter, AuthRouter, HelpRouter } from "./utils/const";
+import { ShopRouter, HomeRouter, RegisterRouter, AuthRouter, HelpRouter, NewsRouter } from "./utils/const";
 import ShopPage from "./compon/ShopPage";
 import HomePage from "./compon/homePage";
 import AuthPage from "./compon/AuthPage";
 import RegisterPage from "./compon/RegisterPage";
 import HelpPage from "./compon/help";
+import NewsP from "./compon/NewsPage";
 
 export const publicRoutes = [
     {
@@ -25,5 +26,9 @@ export const publicRoutes = [
     {
         path: HelpRouter,
         Element: HelpPage
+    },
+    {
+        path: NewsRouter,
+        Element: NewsP
     },
 ]
