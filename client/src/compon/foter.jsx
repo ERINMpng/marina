@@ -36,7 +36,7 @@ const FooterPage = () =>{
                         <Text color={'#825955'}><Link to={`${HomeRouter}#sevices`}>About</Link></Text>
                         <Text color={'#825955'}><Link to={AuthRouter}>Sign In</Link></Text>
                         <Text color={'#825955'}><Link to={RegisterRouter}>Register</Link></Text>
-                        <Text color={'#825955'}><Link to={NewsRouter}>News</Link></Text>
+                        <Text color={'#825955'}><Link to={`${NewsRouter}#newsmain`}>News</Link></Text>
                     </Box>
                     <Box margin={'50px 300px 0px 0px'}>
                         <Text color={'#c4a19d'} fontSize={'25px'}>Contacts</Text>

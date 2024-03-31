@@ -12,7 +12,7 @@ const NewsP = () => {
     return (
         <Box>
             <NavBar />
-            <Flex justify='center' flexDirection='column' padding={'100px 0px 0px 0px'}>
+            <Flex justify='center' flexDirection='column' padding={'100px 0px 0px 0px'} id='newsmain'>
                 <News />
                 <News />
                 <News />
