@@ -6,10 +6,27 @@ import {ShopRouter, HomeRouter, RegisterRouter, AuthRouter, HelpRouter} from '..
 import NavBar from './NavBar';
 import News from './News';
 import FooterPage from './foter';
-import TopButton from './TopButton';
+import TopButton from './TopButton';    
+import { useEffect, useState } from 'react';
+import Loader from './Loader';
 
 const NewsP = () => {
-    return (
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            setIsLoading(false)
+        }
+        fetchData();
+    }, [])
+
+    return(
+        <>
+            {isLoading ? (
+                <Loader />
+            ) : (
         <Box>
             <NavBar />
             <Flex justify='center' flexDirection='column' padding={'100px 0px 0px 0px'} id='newsmain'>
@@ -21,7 +38,7 @@ const NewsP = () => {
             </Flex>
             <TopButton />
             <FooterPage />
-        </Box>
+        </Box>)}</>
     )}
 
     export default NewsP;
