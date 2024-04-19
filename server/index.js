@@ -10,11 +10,12 @@ const baseURL = process.env.LOCAL_CLIENT_URL;
 
 const app = express();
 app.use(express.json());
-app.use(cookeiParser);
+app.use(cookeiParser());
 app.use(cors({
    credentials: true,
    origin: baseURL
 }));
+app.use('/api', router)
 
 const options = {
    dbName: 'potatoe'
