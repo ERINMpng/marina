@@ -1,14 +1,12 @@
-const { model } = require('mongoose');
-
-const Router = require('express').Router;
-const userControllers = require('../controllers/user-controller')
+const Router = require("express").Router;
+const userController = require("../controllers/user-controller");
 const router = new Router();
 
-router.post('/registration', userControllers.registration);
-router.post('/login', userControllers.login);
-router.post('/logout', userControllers.logout);
-router.get('/activate/:link', userControllers.activate);
-router.get('/refresh', userControllers.refresh);
-router.get('/users', userControllers.getUsers);
+router.post("/registration", userController.registration);
+router.post("/login", userController.login);
+router.post("/logout", userController.logout);
+router.get("/activate/:link", userController.activate);
+router.get("/refresh", userController.refresh);
+router.get("/users", userController.getUsers);
 
 module.exports = router;
