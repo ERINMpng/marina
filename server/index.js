@@ -1,35 +1,33 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
-const router = require("./router/index");
-const cookieParser = require("cookie-parser");
-const mongoose = require("mongoose");
+require('dotenv').config()
+const express = require('express');
+const cors = require('cors');
+const cookieParser = require('cookie-parser')
+const mongoose = require('mongoose');
+const router = require('./router/index')
+const errorMiddleware = require('./middlewares/error-middleware');
 
-const PORT = process.env.PORT;
-const baseURL = process.env.LOCAL_CLIENT_URL;
-const app = express();
+const PORT = process.env.PORT || 5000;
+const app = express()
+
 app.use(express.json());
 app.use(cookieParser());
-app.use("/api", router);
-app.use(
-  cors({
+app.use(cors({
     credentials: true,
-    origin: baseURL,
-  })
-);
-const options = {
-  dbName: "VideoKat",
-};
+    origin: process.env.CLIENT_URL
+}));
+app.use('/api', router);
+app.use(errorMiddleware);
 
 const start = async () => {
-  try {
-    await mongoose.connect(process.env.DB_URL, options);
-    app.listen(PORT, () => console.log(`Server started on PORT ${5000}`));
-    mongoose.connection.on("error", (err) => {
-      console.error(`MongoDB connection error: ${err}`);
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};
-start();
+    try {
+        await mongoose.connect(process.env.DB_URL, {
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        })
+        app.listen(PORT, () => console.log(`Server started on PORT = ${PORT}`))
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+start()
