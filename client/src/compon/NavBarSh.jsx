@@ -3,6 +3,7 @@ import {Text, Box, Flex, Grid, Input, Heading, Center} from '@chakra-ui/react';
 import { Button, ButtonGroup } from '@chakra-ui/react'
 import {ShopRouter, HomeRouter, RegisterRouter, AuthRouter} from '../utils/const'
 import { Link } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
 const NavBarSh = () => {
     return (

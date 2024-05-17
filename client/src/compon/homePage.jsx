@@ -8,6 +8,7 @@ import TopButton from './TopButton';
 import Main from './main';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
+import { observer } from 'mobx-react-lite';
 
 const HomePage = () =>{
     const [isLoading, setIsLoading] = useState(true);

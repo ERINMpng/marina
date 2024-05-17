@@ -5,6 +5,7 @@ import {ShopRouter, HomeRouter, RegisterRouter, AuthRouter} from '../utils/const
 import { Link } from 'react-router-dom';
 import { useRef, useEffect, useState } from 'react' 
 import { useLocation } from 'react-router-dom';
+import { observer } from 'mobx-react-lite';
 
 const NavBar = () => {
 
