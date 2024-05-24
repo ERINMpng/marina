@@ -6,7 +6,7 @@ import {ShopRouter, HomeRouter, RegisterRouter, AuthRouter, HelpRouter} from '..
 import potato from '../img/potatomain.PNG'
 import batat from '../img/batat.jpg'
 import pole from '../img/pole.jpg'
-import CartItem from './CartItem';
+import CartItem from '../cartall/CartItem';
 import News from './News';
 
 

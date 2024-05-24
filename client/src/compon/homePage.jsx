@@ -9,17 +9,30 @@ import Main from './main';
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
 import { observer } from 'mobx-react-lite';
+import { Context } from '../index'
+import { useContext } from 'react';
 
 const HomePage = () =>{
+    const { store } = useContext(Context);
     const [isLoading, setIsLoading] = useState(true);
-
+    
     useEffect(() => {
-        const fetchData = async () => {
-            await new Promise(resolve => setTimeout(resolve, 1000));
+        const checkAuth = async () =>{
+            if(localStorage.getItem('token')){
+                await store.checkAuth();
+            }
             setIsLoading(false)
         }
-        fetchData();
-    }, [])
+        checkAuth();
+    }, [store])
+    
+
+    //     const fetchData = async () => {
+    //         await new Promise(resolve => setTimeout(resolve, 1000));
+    //         setIsLoading(false)
+    //     }
+    //     fetchData();
+    // }, [])
 
     return(
         <>

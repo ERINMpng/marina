@@ -1,10 +1,10 @@
 import '../App.css';
-import CartItem from './CartItem';
+import CartItem from '../cartall/CartItem';
 import { Flex, Box } from '@chakra-ui/react';
 import NavBar from './NavBar';
 import FooterPage from './foter';
 import TopButton from './TopButton';
-import CartItem2 from './Cart2';    
+import CartItem2 from '../cartall/Cart2';    
 import { useEffect, useState } from 'react';
 import Loader from './Loader';
 

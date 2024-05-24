@@ -2,20 +2,22 @@ import '../App.css';
 import {Text, Box, Flex, Grid, Input,Heading,InputGroup, InputLeftElement, Stack, Button} from '@chakra-ui/react';
 import NavBarSh from './NavBarSh';
 import { Link } from 'react-router-dom';
-import { RegisterRouter } from '../utils/const';
+import { RegisterRouter, HomeRouter } from '../utils/const';
 import { Context } from '../index'
 import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 const AuthPage = () =>{
     const { store } = useContext(Context);
     const [ email, setEmail] = useState('');
     const [ password, setPassword] = useState('');
+    const navigate = useNavigate();
     const handleLogin = async(email, password) =>{
         try{
             await store.login(email, password);
             if (store.isAuth) {
-                alert('Вы зареганы')
+                navigate(HomeRouter);
             }else{
                 store.setError('invalid')
                 alert('error')
@@ -50,8 +52,8 @@ const AuthPage = () =>{
                         <Stack spacing={4} margin='10px 0px 10px 0px'>
                             <InputGroup>
                                 <InputLeftElement pointerEvents='none'>
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20px" height="undefined" viewBox="0 0 24 24">
-                                    <path fill="currentColor" d="M5 2H3v20h18V2H5zm14 18H5V4h14v16zM17 6H7v4h10V6zM7 12h2v2H7v-2zm6 0h-2v2h2v-2zm2 0h2v2h-2v-2zm-6 4H7v2h2v-2zm2 0h2v2h-2v-2zm6 0h-2v2h2v-2z"/>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="25px" height="undefined" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M22 4H2v16h20V4zM4 18V6h16v12H4zM8 8H6v2h2v2h2v2h4v-2h2v-2h2V8h-2v2h-2v2h-4v-2H8V8z"/>
                                 </svg>
                                 </InputLeftElement>
                                 <Input type='text' placeholder='Email'  onChange={e=> setEmail(e.target.value)} value={email}  />
